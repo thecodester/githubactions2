@@ -1,0 +1,40 @@
+name: challenge2
+
+on: push
+
+jobs:
+    job1:
+        name: job1
+        runs-on: ubuntu-latest
+        steps:
+        - name: Set current date as env variable
+          run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        - name: Echo current date
+          run: echo $NOW
+    job2:
+        name: job2
+        runs-on: windows-latest
+        steps:
+        - name: Set current date as env variable
+          run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        - name: Echo current date
+          run: echo $NOW
+           
+    job3:
+        name: job3
+        runs-on: macos-latest
+        steps:
+        - name: Set current date as env variable
+          run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        - name: Echo current date
+          run: echo $NOW
+          
+    job4:
+        name: job4
+        runs-on: windows-latest
+        needs: [job1, job2, job3]
+        steps:
+        - name: Set current date as env variable
+          run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        - name: Echo current date
+          run: echo $NOW
