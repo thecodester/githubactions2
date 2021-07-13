@@ -32,7 +32,7 @@ jobs:
             # Optional plain body:
             body: Build job of ${{github.repository}} completed successfully!
             # Optional HTML body read from file:
-            html_body: file://README.html
+            # html_body: file://README.html
             # Optional carbon copy recipients:
             cc: daniel.b.wroblewski@gmail.com
             # Optional attachments:
