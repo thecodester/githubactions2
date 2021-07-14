@@ -1,0 +1,17 @@
+name: artifact workflow
+
+on: [push]
+
+jobs:
+  make-artifact:
+    env:
+      ARTIFACT_NAME: 'myartifact'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Create artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+            name: 'Daniel artifact'
+            path: ./${{ env.ARTIFACT_NAME }}
