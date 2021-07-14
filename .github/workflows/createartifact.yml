@@ -1,4 +1,4 @@
-name: artifact workflow
+name: artifact-workflow
 
 on: [push]
 
