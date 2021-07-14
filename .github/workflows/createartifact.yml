@@ -13,5 +13,5 @@ jobs:
       - name: Create artifact
         uses: actions/upload-artifact@v1.0.0
         with:
-            name: {{ env.ARTIFACT_NAME }}
+            name: ${{ env.ARTIFACT_NAME }}
             path: oldactions
